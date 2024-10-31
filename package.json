@@ -42,10 +42,10 @@
   },
   "scripts": {
     "start": "npm run prod",
-    "build": "npm-run-all clean transpile",
+    "build": "npm run clean && npm run transpile",
     "server": "node ./dist-server/bin/www",
-    "dev": "NODE_ENV=development npm-run-all build server",
-    "prod": "NODE_ENV=production npm-run-all build server",
+    "dev": "NODE_ENV=development npm run server",
+    "prod": "NODE_ENV=production npm run server",
     "transpile": "babel ./server --out-dir dist-server",
     "clean": "rm -rf dist-server",
     "watch:dev": "nodemon",
